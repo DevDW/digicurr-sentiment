@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box
+}
+
+header {
+    text-align: center;
+    margin-bottom: 0.75em;
+}
+
+header h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    font-size: 3em;
+    margin-bottom: 0.1em;
+}
+
+header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    width: 723px;
+    letter-spacing: 2px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid black;
+    animation:
+        typing 4.5s steps(60, end),
+        blinking-cursor .5s step-end infinite
+}
+
+@keyframes typing {
+    from { width: 0}
+    to { width: 723px; }
+}
+
+@keyframes blinking-cursor {
+    from, to { border-color: transparent }
+    50% { border-color: black}
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption {
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.15em;
+    margin: 5px;
+}
+
+.menu {
+    list-style-type: none;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.menu li {
+    display: inline-block;
+    padding: 8px 48px;
+    color: white;
+}
+
+.menu li a {
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.1em;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.075em;
+}
+
+.menu li:hover {
+    cursor: pointer;
+    background-color: #FF9900;
+}
+
+.instructions {
+    font-size: 1.05em;
+}
+
+.instructions, .methodology, .project-background, .about {
+    clear: both;
+    text-align: center;
+    font-family: 'Arimo', sans-serif;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid black;
+}
+
+.button {
+    background-color: #FF9900;
+    border: none;
+    border-radius: 8px;
+    color: black;
+    padding: 7px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+    color: white;
+}
+
+#clear-info {
+    font-weight: 900;
+}
+
+.crypto-logos {
+    text-align: center;
+}
+
+.cryptologo-and-name {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cryptologo-and-name:hover {
+    transform: scale(1.2);
+}
+
+#selected-crypto-info {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1.5em;
+    text-align: center;
+    animation:
+        slidein 1.5s
+}
+
+.project-background h2, .methodology h2, .about h2 {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+.icons {
+    display: inline-block;
+}
+
+.instructions, #methodology-section, #about-section, #project-background-section {
+    margin: 0 auto;
+    text-align: justify;
+    text-align-last: center;
+    width: 75%;
+}

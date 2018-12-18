@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>DigiCurr Sentiment: Twitter Sentiment Analyzer for Cryptocurrencies</title>
+    <script src="index.js" defer></script>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:500,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700" rel="stylesheet">
+</head>
+
+<header>
+    <h1>DigiCurr Sentiment</h1>
+    <h2>analyze twitter sentiment for cryptocurrencies</h2>
+</header>
+
+<body>
+    <div>
+        <ul class="menu">
+            <li id="methodology-link"><a>Methodology</a></li>
+            <li id="about-link"><a>About the Developer</a></li>
+            <li id="pb-link"><a>Project Background</a></li>
+        </ul>
+    </div>
+    <br>
+    <p class="instructions">DigiCurr Sentiment uses natural language processing on recent popular tweets about selected cryptocurrencies to determine whether the sentiment about the cryptocurrency is negative, neutral, or positive. Bitcoin, Ethereum, and Litecoin are currently supported. Click on one below to view the sentiment surrounding it on Twitter in the past 24-48 hours.</p>
+    <div class="crypto-logos">
+        <figure class="cryptologo-and-name" id="btc">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bitcoin.svg/240px-Bitcoin.svg.png" alt="Bitcoin logo" width=120px height=120px>
+            <figcaption>Bitcoin</figcaption>
+        </figure>
+        <figure class="cryptologo-and-name" id="eth">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Ethereum_logo.svg/150px-Ethereum_logo.svg.png" alt="Ethereum logo" width=80px height=80px>
+            <figcaption>Ethereum</figcaption>
+        </figure>
+        <figure class="cryptologo-and-name" id="ltc">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Litecoin.svg/240px-Litecoin.svg.png" alt="Litecoin logo" width=120px height=120px>
+            <figcaption>Litecoin</figcaption>
+        </figure>
+    </div>
+
+    <div class="instructions" id="clear-info" style="display: none">
+        <button class="button">Clear Information Below</button>
+    </div>
+
+    <div id="selected-crypto-info"></div>
+    <hr>
+    <div class="methodology" id="methodology-section">
+        <h2>Methodology</h2>
+        <p>
+            The top 15 tweets (<a href="https://help.twitter.com/en/using-twitter/top-search-results-faqs" target="_blank">Top Tweets are determined by a Twitter algorithm</a>) since the start of yesterday are retrieved for the selected cryptocurrency.
+            <br><br>
+            In the calls to Twitter's API, the queries for Bitcoin, Ethereum, and Litecoin are, respectively, &quot;bitcoin OR btc,&quot; &quot;ethereum OR eth,&quot; and &quot;litecoin OR ltc.&quot; I felt that these terms were better to use than their hashtag counterparts because the latter are too often used simply to attract more visibility to a tweet, even when it is only somewhat or tangentially related, or are otherwise frequently used on tweets that may not be the most useful for sentiment analysis. The OR operator is used to search for tweets containing either of the designated terms. Searches are limited to English-language tweets.
+            <br>
+            <span id="read-more-text" style="display: none">
+                <br>
+                Once the text of the individual tweets is extracted, each one undergoes sentiment analysis using the Sentiment module with custom options that include and score key words and phrases associated with the cryptocurrency market (e.g., &quot;bear market,&quot; &quot;bull market,&quot; &quot;selloff,&quot; and &quot;recovery&quot;) that are not included in the AFINN-165 word list used by the Sentiment module. Words are scored from -5 to 5, with -5 being the most negative and 5 being the most positive. Words found in neither the AFINN-165 word list nor in the custom options are not assigned a value.
+                <br><br>
+                The sentiment scores of the tweets are summed and divided by the number of tweets retrieved to get the mean sentiment score. The mean sentiment score is then interpreted as negative, neutral, or positive as follows:
+                <br><br>
+                Mean score &lt; -3: Highly Negative<br>
+                Mean score ≥ -3 and &lt; -1: Slightly Negative<br>
+                Mean score ≥ -1 and &lt; 1: Neutral<br>
+                Mean score ≥ 1 and ≤ 3: Slightly Positive<br>
+                Mean score &gt; 3: Highly Positive
+                <br><br>
+                This methodology is subject to change to make further refinements. Please also note that sentiment analysis is imperfect, particularly when working with smaller sample sizes, because of the nuances of human language and technical and model-related limitations. Greater accuracy can be achieved with sophisticated models that are improved through machine learning.
+                <br><br>
+            </span>
+            <br>
+            <button id="read-button" class="button">Read More</button>
+        </p>
+    </div>
+    <hr>
+    <div class="about" id="about-section">
+        <h2>About the Developer</h2>
+        <figure class="icons">
+            <a href="https://github.com/DevDW" target="_blank"><img src="/GitHub_Logo.png" width="200" height="82" alt="GitHub logo" /></a>
+            <figcaption>My GitHub</figcaption>
+        </figure>
+        <figure class="icons">
+            <a href="https://www.linkedin.com/in/dajahiwiley/" target="_blank"><img src="/In-2C-75px-TM.png" alt="LinkedIn logo"/></a>
+            <figcaption>My LinkedIn</figcaption>
+        </figure>
+        <div id="about-paragraph">
+            <p>My name is Dajahi Wiley and I am a self-taught developer within the JavaScript ecosystem, having built projects with vanilla JavaScript, React, and Node.js since I began programming in early 2018. My programming skills span the front-end and back-end. I have exposure to, and interest in, the blockchain space and smart contract development in Solidity and other languages, and completed a certified course on Hyperledger created by the Linux Foundation.<br><br>Thank you for checking out DigiCurr Sentiment! Please take a look at my other projects on GitHub and feel free to connect with me on LinkedIn!</p>
+        </div>
+    </div>
+    <hr>
+    <div class="project-background" id="project-background-section">
+        <h2>Project Background</h2>
+        <p>
+            After finishing my last project, I had a few things on my mind about future project ideas, existing interests that I wanted to incorporate into those projects, and cutting-edge areas I'd like to learn more about. I decided to bring my existing interest in cryptocurrencies together with my desire to learn more about artificial intelligence (AI).
+            <br><br>
+            My interest in cryptocurrencies crystallized in 2017 and educating myself about blockchain technology was a major impetus in inspiring me to commit to learning how to program. In the coming years and decades, AI promises to transform the world in profound and deep ways.
+            <br><br>
+            Natural language processing (NLP)—a subfield of AI—is the area of knowledge and ongoing inquiry and research that underlies this project. More specifically, it is NLP applied for the purposes of sentiment analysis.
+            <br><br>
+            The project name, DigiCurr Sentiment, describes what the project is about. "DigiCurr" is a portmanteau of "digital" and "currency," since crytocurrencies are a major type of digital currency, and "Sentiment" points to what the project is analyzing and measuring.
+            <br><br>
+            For the tech stack I used to build DigiCurr Sentiment, the back-end is Node.js with Express, the <a href="https://github.com/ttezel/twit" target="_blank">Twit package</a>, and the <a href="https://www.npmjs.com/package/sentiment" target="_blank">Sentiment module</a>. The front-end uses vanilla JavaScript, HTML, and CSS, and I will be recreating it with React in the future as well. My decisions regarding the tech stack were made based on what I've enjoyed working with thus far and what I want to strengthen my skills with.
+            <br><br>
+        </p>
+    </div>
+
+</body>
+
+</html>

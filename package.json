@@ -1,0 +1,31 @@
+{
+  "name": "digicurr_sentiment",
+  "version": "1.0.0",
+  "description": "Uses natural language processing (NLP) on tweets related to cryptocurrencies to determine positive, negative, or neutral sentiment.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cryptocurrency",
+    "cryptocurrencies",
+    "crypto",
+    "twitter",
+    "tweets",
+    "natural language processing",
+    "nlp",
+    "sentiment",
+    "sentiment analysis",
+    "social media"
+  ],
+  "author": "Dajahi Wiley",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.0.0",
+    "express": "^4.16.4",
+    "path": "^0.12.7",
+    "sentiment": "^5.0.1",
+    "twit": "^2.2.11"
+  },
+  "proxy": "http://localhost:5000"
+}
