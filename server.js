@@ -84,7 +84,7 @@ let avgSentimentScore = null;
 
 function sentimentScoreAveraging(sentimentScores) {
     let sumOfSentimentScores = sentimentScores.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-    avgSentimentScore = (sumOfSentimentScores / preprocessedTweets.length);
+    avgSentimentScore = (sumOfSentimentScores / preprocessedTweets.length).toFixed(2);
 
     return avgSentimentScore;
 }
