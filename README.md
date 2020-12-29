@@ -26,4 +26,4 @@ This is my fourth independent project since I began learning how to program in e
 
 After finishing [my last project](https://github.com/DevDW/lexical-amplifier), I had a few things on my mind about future project ideas, existing interests that I wanted to incorporate into those projects, and cutting-edge areas I'd like to learn more about. I decided to bring my existing interest in cryptocurrencies together with my desire to learn more about artificial intelligence (AI). 
 
-The project name, DigiCurr Sentiment, describes what the project is about. "DigiCurr" is a portmanteau of "digital" and "currency," since crytocurrencies are a major type of digital currency, and "Sentiment" points to what the project is analyzing and measuring.
+The project name, DigiCurr Sentiment, describes what the project is about. "DigiCurr" is a portmanteau of "digital" and "currency," since cryptocurrencies are a major type of digital currency, and "Sentiment" points to what the project is analyzing and measuring.
